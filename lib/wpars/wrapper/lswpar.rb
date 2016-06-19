@@ -3,13 +3,8 @@ module WPAR
     class Lswpar
 
       def list
-        begin
-          output = External.cmd(@command)
-        rescue External::ExternalFailure => error
-          puts "List wpar command failed with :\n[#{error}]"
-        end
+        data = parse(External.cmd(cmd: @command))
 
-        data = parse(output)
         if block_given?
           return data.each { |obj| yield obj }
         else

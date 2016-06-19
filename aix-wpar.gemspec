@@ -2,7 +2,7 @@ $:.unshift(File.expand_path('../lib/', __FILE__))
 require 'wpars/version'
 
 deps = {
-  'open4' => [ '~> 1', '>= 1.0.0' ]
+  'mixlib/shellout' => [ '~> 2' ]
 }
 
 Gem::Specification.new do |gem|
@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["adejoux@djouxtech.net"]
   gem.description   = %q{A wrapper for the AIX WPAR administration.}
   gem.license       = "MIT"
-  gem.summary       = %q{A wrapper for the AIX WPAR administration.}
+  gem.summary       = %q{A ruby library wrapper for the AIX WPAR administration.}
   gem.homepage      = "https://github.com/adejoux/ruby-aix-wpar"
   gem.files         = `git ls-files`.split($\)
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})

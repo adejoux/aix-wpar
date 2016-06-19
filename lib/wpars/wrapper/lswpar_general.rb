@@ -16,6 +16,7 @@ module WPAR
       private
       def parse(output) #:nodoc:
         generals = []
+        
         # remove sharp character
         output.slice!(0)
 

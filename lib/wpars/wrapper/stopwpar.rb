@@ -12,11 +12,7 @@ module WPAR
         end
 
         puts "debug: #{cmd}" unless options[:debug].nil?
-        begin
-          External.cmd(cmd)
-        rescue External::ExternalFailure => error
-          puts "Stop wpar command failed with :\n[#{error}]"
-        end
+        External.cmd(cmd: cmd, live_stream: options[:live_stream])
       end
     end
   end

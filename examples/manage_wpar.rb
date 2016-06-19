@@ -1,13 +1,26 @@
 require 'wpars'
 
-wpar = WPAR::WPAR.new(command: "ssh adxlpar2", name: "testwpar")
-wpar.general.hostname="testwpar"
-wpar.general.auto="yes"
-#puts wpar.inspect
+#new wpar named testwpar
+wpar = WPAR::WPAR.new(command: "ssh adxlpar2", name: "testwpar2")
+#live stream output
+wpar.live_stream=true
 
-#wpar.create
-#wpar.stop(force: true)
-#wpar.start
+#set hostname if different
+wpar.general.hostname="testwpar2"
+
+#set auto start
+wpar.general.auto="yes"
+
+#create wpar
+wpar.create
+
+#stop wpar
+wpar.stop(force: true)
+
+#start wpar
+wpar.start
 #wpar.update
+wpar.sync
+
+#delete
 wpar.destroy(force: true)
-#puts wpar.general.inspect

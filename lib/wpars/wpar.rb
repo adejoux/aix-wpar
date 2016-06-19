@@ -23,6 +23,7 @@ module WPAR
 
     attr_reader :networks, :devices, :mountpoints, :resource_control
     attr_reader :security, :general, :name
+    attr_accessor :live_stream
 
     def initialize(options = {})
       @command = options[:command]
@@ -42,24 +43,25 @@ module WPAR
                       start: options[:start],
                       rootvg: options[:rootvg],
                       wparvg: options[:wparvg],
-                      backupimage: options[:backupimage])
+                      backupimage: options[:backupimage],
+                      live_stream: @live_stream)
       #update
       update(options)
     end
 
     def destroy(force: nil)
-      RmWpar.destroy(name: @name, force: force, command: @command)
+      RmWpar.destroy(name: @name, force: force, command: @command, live_stream: @live_stream)
     end
 
     def stop(force: nil)
-      StopWpar.stop( name: @name, force: force, command: @command)
+      StopWpar.stop( name: @name, force: force, command: @command, live_stream: @live_stream)
 
       #update status
       @general = LswparGeneral.new(command: @command).filter(@name)
     end
 
     def start()
-      StartWpar.start( name: @name, command: @command)
+      StartWpar.start( name: @name, command: @command, live_stream: @live_stream)
 
       #update status
       @general = LswparGeneral.new(command: @command).filter(@name)
