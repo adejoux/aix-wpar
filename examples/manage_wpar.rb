@@ -4,7 +4,7 @@ require 'wpars'
 wpar = WPAR::WPAR.new(command: "ssh adxlpar2", name: "testwpar2")
 
 #live stream output
-wpar.live_stream=true
+wpar.live_stream=STDOUT
 
 #set hostname if different
 wpar.general.hostname="testwpar2"

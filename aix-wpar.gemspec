@@ -2,7 +2,7 @@ $:.unshift(File.expand_path('../lib/', __FILE__))
 require 'wpars/version'
 
 deps = {
-  'mixlib/shellout' => [ '~> 2' ]
+  'mixlib-shellout' => [ '~> 2' ]
 }
 
 Gem::Specification.new do |gem|
