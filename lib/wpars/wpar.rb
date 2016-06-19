@@ -16,6 +16,7 @@ require 'wpars/wrapper/mkwpar'
 require 'wpars/wrapper/rmwpar'
 require 'wpars/wrapper/stopwpar'
 require 'wpars/wrapper/startwpar'
+require 'wpars/wrapper/syncwpar'
 
 module WPAR
   class WPAR
@@ -65,6 +66,10 @@ module WPAR
 
       #update status
       @general = LswparGeneral.new(command: @command).filter(@name)
+    end
+
+    def sync(directory: nil)
+      SyncWpar.sync( name: @name, command: @command, directory: directory, live_stream: @live_stream)
     end
 
     def update(options = {})

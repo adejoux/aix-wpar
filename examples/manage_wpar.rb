@@ -2,6 +2,7 @@ require 'wpars'
 
 #new wpar named testwpar
 wpar = WPAR::WPAR.new(command: "ssh adxlpar2", name: "testwpar2")
+
 #live stream output
 wpar.live_stream=true
 
@@ -19,7 +20,8 @@ wpar.stop(force: true)
 
 #start wpar
 wpar.start
-#wpar.update
+
+#sync wpar
 wpar.sync
 
 #delete

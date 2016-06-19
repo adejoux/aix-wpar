@@ -7,6 +7,7 @@ module WPAR
       CHWPAR = '/usr/sbin/chwpar'
       STOPWPAR = '/usr/sbin/stopwpar'
       STARTWPAR = '/usr/sbin/startwpar'
+      SYNCWPAR = '/usr/sbin/syncwpar'
     end
   end
 end
