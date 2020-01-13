@@ -14,5 +14,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = WPAR::VERSION
 
-  gem.add_dependency "mixlib-shellout", "~> 3"
+  gem.add_dependency "mixlib-shellout", ["> 2", "< 4"]
 end
